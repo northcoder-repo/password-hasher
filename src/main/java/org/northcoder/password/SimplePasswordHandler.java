@@ -30,7 +30,7 @@ public class SimplePasswordHandler implements PasswordHandler {
         // Strings are built from the set of printable Unicode characters.
         // To make storage simpler, the resulting salt is Base64-encoded:
         final int saltLength = 32;
-        return dataToB64String(RandomStringUtils.random(saltLength));
+        return dataToB64String(RandomStringUtils.secure().next(saltLength));
     }
 
     @Override
